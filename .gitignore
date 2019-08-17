@@ -1,0 +1,10 @@
+.gitignore
+.vscode
+Cargo.lock
+build
+roms
+target
+venv
+chip8/chip8.*.so
+**/__pycache__
+

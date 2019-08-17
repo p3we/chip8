@@ -1,0 +1,31 @@
+[package]
+name = "chip8"
+authors = ["Artur Sobierak <asobierak@gmail.com>"]
+version = "0.2.0"
+edition = "2018"
+
+[package.metadata.maturin]
+maintainer = "Artur Sobierak"
+maintainer-email = "asobierak@gmail.com"
+classifier = ["Topic :: System :: Emulators"]
+requires-dist = ["pygame~=2.0.1", "pillow~=8.1.0"]
+
+[package.metadata.maturin.scripts]
+chip8 = "chip8.app:main"
+
+[lib]
+name = "chip8"
+crate-type = ["cdylib"]
+
+[dependencies.rand]
+version = "0.8.3"
+
+[dependencies.itertools]
+version = "0.10.0"
+
+[dependencies.pyo3]
+version = "0.13.1"
+
+[features]
+default = ["extension-module"]
+extension-module = ["pyo3/extension-module"]
